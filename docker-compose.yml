@@ -9,7 +9,7 @@ services:
   web:
     build: .
     ports:
-      - "3030:3031"
+      - "3031:3030"
     links:
       - db:db
 
