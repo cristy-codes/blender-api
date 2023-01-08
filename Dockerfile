@@ -12,4 +12,4 @@ COPY . .
 
 EXPOSE 3030
 
-CMD ["yarn", "start"]
+CMD ["yarn", "prod"]
