@@ -1,6 +1,6 @@
 {
   "host": "api.blender.cristyg.com",
-  "port": 3030,
+  "port": 3031,
   "public": "../public/",
   "paginate": {
     "default": 10,
