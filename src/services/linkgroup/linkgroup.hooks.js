@@ -39,10 +39,10 @@ const validateFields = () => (context) => {
 };
 
 const maxLinks = () => (context) => {
-  if (context.data.links.length <= 20) {
+  if (context.data.links.length <= 12) {
     return context;
   }
-  throw new Error("Cannot have more than 20 links.");
+  throw new Error("Cannot have more than 12 links.");
 };
 
 const linkTitle = () => (context) => {

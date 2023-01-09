@@ -12,7 +12,8 @@ module.exports = function (app) {
       links: Array,
       description: String,
       slug: String,
-      expiration: { type: Date, expires: '86400s', default: Date.now },
+      expiration: { type: Date, expires: "86400s", default: Date.now },
+      maxCap: Number,
     },
     {
       timestamps: true,
