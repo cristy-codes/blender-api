@@ -10,10 +10,7 @@
     "entity": "user",
     "service": "users",
     "secret": "+vpuvHr+4B0rQjfuiwZH1MbN088=",
-    "authStrategies": [
-      "jwt",
-      "local"
-    ],
+    "authStrategies": ["jwt", "local"],
     "jwtOptions": {
       "header": {
         "typ": "access"
@@ -28,5 +25,5 @@
       "passwordField": "password"
     }
   },
-  "mongodb": "mongodb://db:27018/blender_api"
+  "mongodb": "mongodb://db:27017/blender_api"
 }
