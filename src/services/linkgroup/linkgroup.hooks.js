@@ -1,4 +1,5 @@
 const ShortUniqueId = require("short-unique-id");
+const { disallow } = require("feathers-hooks-common");
 
 const generateSlug = () => (context) => {
   const uid = new ShortUniqueId({ length: 6 });
@@ -33,7 +34,7 @@ const validateFields = () => (context) => {
     }
   });
   if (!isLinksValid) {
-    throw new Error("Each link must be a valid URL.")
+    throw new Error("Each link must be a valid URL.");
   }
   return context;
 };
@@ -59,15 +60,22 @@ const linkTitle = () => (context) => {
   return context;
 };
 
+const slugValidation = () => (context) => {
+  if (!context.params.query.slug) {
+    throw new Error("Slug was not provided");
+  }
+  return context;
+};
+
 module.exports = {
   before: {
     all: [],
-    find: [],
-    get: [],
+    find: [slugValidation()],
+    get: [disallow()],
     create: [validateFields(), maxLinks(), generateSlug(), linkTitle()],
-    update: [],
-    patch: [],
-    remove: [],
+    update: [disallow()],
+    patch: [disallow()],
+    remove: [disallow()],
   },
 
   after: {

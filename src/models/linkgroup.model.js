@@ -13,7 +13,6 @@ module.exports = function (app) {
       description: String,
       slug: String,
       expiration: { type: Date, expires: "86400s", default: Date.now },
-      maxCap: Number,
     },
     {
       timestamps: true,
